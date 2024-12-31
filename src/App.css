@@ -1,121 +1,134 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .App {
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 600px;
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
 .duration-selector {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .duration-selector button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #007bff;
-  color: white;
-  transition: background-color 0.2s ease;
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.2s ease;
 }
 
 .duration-selector button:hover {
-  background-color: #0056b3;
+    background-color: #0056b3;
 }
 
 .test-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .word-list-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100px; /* Enough to show two rows */
-  overflow-y: hidden;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: 400px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Enough to show two rows */
+    overflow-y: hidden;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
 
 .word-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  line-height: 1.5;
-  text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .word-list span {
-  font-size: 18px;
-  line-height: 1.5;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.word-list .completed.error {
+    color: red;
 }
 
 .word-list .correct {
-  color: green;
+    color: green;
 }
 
 .word-list .current {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .input-box {
-  width: 100%;
-  max-width: 400px;
-  height: 50px;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    height: 50px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .results {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .restart-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background-color: #28a745;
-  color: white;
-  transition: background-color 0.2s ease;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    transition: background-color 0.2s ease;
 }
 
 .restart-button:hover {
-  background-color: #1c7c31;
+    background-color: #1c7c31;
 }
 
 .timer {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
+}
+
+.error {
+    color: red;
+}
+
+.current.error {
+    color: red;
 }
