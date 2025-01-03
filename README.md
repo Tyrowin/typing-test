@@ -24,7 +24,7 @@ A modern, React-based typing speed test application that helps users measure and
 
 1. Clone the repository
 ```bash
-git clone https://github.com/Tyrowin/typing_speed_test
+git clone https://github.com/Tyrowin/typing-test
 ```
 
 2. Navigate to the project directory
