@@ -76,8 +76,8 @@ h1 {
     gap: 10px;
     line-height: 1.5;
     text-align: center;
-    color: #000; /* Ensure letters are dark */
-    justify-content: center; /* Center align words */
+    color: #000;
+    justify-content: center;
 }
 
 .word-list span {
@@ -103,9 +103,9 @@ h1 {
     height: 50px;
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #cccccc; /* Dark border */
-    background-color: #fff; /* Dark background */
-    color: #000; /* Dark text */
+    border: 1px solid #cccccc;
+    background-color: #fff;
+    color: #000;
     border-radius: 5px;
     margin-bottom: 20px;
     resize: none;
@@ -114,7 +114,7 @@ h1 {
 
 .results {
     margin-top: 20px;
-    color: #000;
+    color: #6d6d6d;
     -ms-flex-align: center;
 }
 
@@ -151,7 +151,7 @@ footer {
 }
 
 footer a {
-    color: #858585;
+    color: #6d6d6d;
     text-decoration: none;
     font-size: 1rem;
 }

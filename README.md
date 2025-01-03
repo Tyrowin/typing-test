@@ -6,7 +6,7 @@ A modern, React-based typing speed test application that helps users measure and
 
 - Real-time typing speed measurement (WPM - Words Per Minute)
 - Accuracy tracking
-- Multiple test durations (15s, 30s, 60s, 120s)
+- Multiple test durations (15s, 30s, 60s)
 - Error tracking and visualization
 - Dynamic word list that updates as you type
 - Visual feedback for correct and incorrect words
