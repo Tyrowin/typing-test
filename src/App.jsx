@@ -35,7 +35,7 @@ function App() {
 
     const wordBoxRef = useRef(null); // Reference for scrolling
 
-    const ROW_SIZE = 10; // Number of words per row
+    const ROW_SIZE = 6; // Number of words per row
     const CHUNK_SIZE = ROW_SIZE * 2; // Number of words to display at a time
 
     useEffect(() => {
@@ -201,9 +201,6 @@ function App() {
                 <button onClick={() => handleDurationChange(60)}>
                     60 Seconds
                 </button>
-                <button onClick={() => handleDurationChange(120)}>
-                    120 Seconds
-                </button>
             </div>
 
             <div className="test-container">
@@ -247,6 +244,15 @@ function App() {
                     Restart Test
                 </button>
             </div>
+            <footer>
+                <a
+                    href="https://github.com/Tyrowin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </footer>
         </div>
     );
 }

@@ -1,7 +1,7 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Geist Mono', monospace;
+    background-color: #cccccc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +21,14 @@ body {
 h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: #000;
 }
 
 .duration-selector {
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .duration-selector button {
@@ -34,13 +38,13 @@ h1 {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #75a0ce;
     color: white;
     transition: background-color 0.2s ease;
 }
 
 .duration-selector button:hover {
-    background-color: #0056b3;
+    background-color: #4373a3;
 }
 
 .test-container {
@@ -54,7 +58,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100px; /* Enough to show two rows */
+    height: 100px;
     overflow-y: hidden;
     border: 1px solid #ccc;
     padding: 10px;
@@ -72,6 +76,8 @@ h1 {
     gap: 10px;
     line-height: 1.5;
     text-align: center;
+    color: #000; /* Ensure letters are dark */
+    justify-content: center; /* Center align words */
 }
 
 .word-list span {
@@ -97,13 +103,19 @@ h1 {
     height: 50px;
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc; /* Dark border */
+    background-color: #fff; /* Dark background */
+    color: #000; /* Dark text */
     border-radius: 5px;
     margin-bottom: 20px;
+    resize: none;
+    font-family: 'Geist Mono', monospace;
 }
 
 .results {
     margin-top: 20px;
+    color: #000;
+    -ms-flex-align: center;
 }
 
 .restart-button {
@@ -112,13 +124,13 @@ h1 {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    background-color: #28a745;
+    background-color: #78b686;
     color: white;
     transition: background-color 0.2s ease;
 }
 
 .restart-button:hover {
-    background-color: #1c7c31;
+    background-color: #4c7e56;
 }
 
 .timer {
@@ -131,4 +143,20 @@ h1 {
 
 .current.error {
     color: red;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #858585;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #585858;
 }
