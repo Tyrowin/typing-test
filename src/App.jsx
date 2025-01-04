@@ -7,25 +7,23 @@ const shuffleArray = (array) => {
     let shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [
-            shuffledArray[j],
-            shuffledArray[i],
-        ];
+        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
     }
     return shuffledArray;
 };
 
 function App() {
+    // State variables
     const [userInput, setUserInput] = useState('');
-    const [words, setWords] = useState([]); // Full list of words
+    const [words, setWords] = useState([]);
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
-    const [visibleWords, setVisibleWords] = useState([]); // Words visible in the box
+    const [visibleWords, setVisibleWords] = useState([]);
     const [isTestStarted, setIsTestStarted] = useState(false);
     const [isTestFinished, setIsTestFinished] = useState(false);
     const [wpm, setWpm] = useState(0);
     const [errors, setErrors] = useState(0);
     const [timeRemaining, setTimeRemaining] = useState(60);
-    const [selectedDuration, setSelectedDuration] = useState(60); // Default duration is 60 seconds
+    const [selectedDuration, setSelectedDuration] = useState(60);
     const [totalCharactersTyped, setTotalCharactersTyped] = useState(0);
     const [correctCharacters, setCorrectCharacters] = useState(0);
     const [accuracy, setAccuracy] = useState(100);
@@ -35,10 +33,11 @@ function App() {
 
     const wordBoxRef = useRef(null); // Reference for scrolling
 
-    const ROW_SIZE = 6; // Number of words per row
-    const CHUNK_SIZE = ROW_SIZE * 2; // Number of words to display at a time
+    const ROW_SIZE = 6;
+    const CHUNK_SIZE = ROW_SIZE * 2;
 
     useEffect(() => {
+        // Timer logic
         if (isTestStarted && timeRemaining > 0 && !isTestFinished) {
             const timerInterval = setInterval(() => {
                 setTimeRemaining((prevTime) => prevTime - 1);
@@ -49,6 +48,7 @@ function App() {
     }, [isTestStarted, timeRemaining, isTestFinished]);
 
     useEffect(() => {
+        // Calculate WPM when the test is finished
         if (timeRemaining === 0 && !isTestFinished) {
             calculateWpm();
             setIsTestFinished(true);
@@ -63,15 +63,13 @@ function App() {
     }, []); // Only run once on component mount
 
     const handleInputChange = (e) => {
+        // Check if the user has made an error on the current word
         const input = e.target.value;
         const targetWord = words[currentWordIndex].englishWord;
 
         setTotalCharactersTyped((prev) => prev + 1);
 
-        if (
-            input[input.length - 1] &&
-            input[input.length - 1] === targetWord[input.length - 1]
-        ) {
+        if (input[input.length - 1] && input[input.length - 1] === targetWord[input.length - 1]) {
             setCorrectCharacters((prev) => prev + 1);
         } else if (input[input.length - 1]) {
             setErrors((prevErrors) => prevErrors + 1);
@@ -90,6 +88,7 @@ function App() {
     };
 
     const handleKeyDown = (e) => {
+        // Handle space key press
         if (e.key === ' ' && !isTestFinished) {
             const targetWord = words[currentWordIndex].englishWord;
             if (userInput.endsWith(targetWord)) {
@@ -100,8 +99,7 @@ function App() {
                 setCurrentWordHadError(false); // Reset for next word
 
                 if (nextIndex % ROW_SIZE === 0) {
-                    const nextChunkStart =
-                        Math.floor(nextIndex / ROW_SIZE) * ROW_SIZE;
+                    const nextChunkStart = Math.floor(nextIndex / ROW_SIZE) * ROW_SIZE;
                     const nextChunkEnd = nextChunkStart + CHUNK_SIZE;
                     setVisibleWords(words.slice(nextChunkStart, nextChunkEnd));
                     scrollToNextRow();
@@ -117,12 +115,14 @@ function App() {
     };
 
     const scrollToNextRow = () => {
+        // Scroll to the next row of words
         if (wordBoxRef.current) {
             wordBoxRef.current.scrollTop += wordBoxRef.current.offsetHeight / 2;
         }
     };
 
     const calculateWpm = () => {
+        // Calculate WPM
         const wordsTyped = currentWordIndex + 1;
         const timeInMinutes = selectedDuration / 60;
         setWpm(Math.round(wordsTyped / timeInMinutes));
@@ -134,6 +134,7 @@ function App() {
     };
 
     const handleDurationChange = (duration) => {
+        // Change the test duration
         setSelectedDuration(duration);
         // Reset test state but keep the same word list
         setUserInput('');
@@ -154,6 +155,7 @@ function App() {
     };
 
     const handleReset = () => {
+        // Reset the test
         const newShuffledWords = shuffleArray(wordsData.words);
         setWords(newShuffledWords);
         setUserInput('');
@@ -176,8 +178,8 @@ function App() {
     const resetTest = handleReset;
 
     const getWordClass = (index) => {
-        const visibleStartIndex =
-            Math.floor(currentWordIndex / ROW_SIZE) * ROW_SIZE;
+        // Get the class for the word based on its index
+        const visibleStartIndex = Math.floor(currentWordIndex / ROW_SIZE) * ROW_SIZE;
         const actualIndex = index + visibleStartIndex;
 
         if (actualIndex < currentWordIndex) {
@@ -189,18 +191,13 @@ function App() {
     };
 
     return (
+        // JSX code
         <div className="App">
             <h1>Typing Speed Test</h1>
             <div className="duration-selector">
-                <button onClick={() => handleDurationChange(15)}>
-                    15 Seconds
-                </button>
-                <button onClick={() => handleDurationChange(30)}>
-                    30 Seconds
-                </button>
-                <button onClick={() => handleDurationChange(60)}>
-                    60 Seconds
-                </button>
+                <button onClick={() => handleDurationChange(15)}>15 Seconds</button>
+                <button onClick={() => handleDurationChange(30)}>30 Seconds</button>
+                <button onClick={() => handleDurationChange(60)}>60 Seconds</button>
             </div>
 
             <div className="test-container">
@@ -219,9 +216,7 @@ function App() {
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
                     disabled={isTestFinished}
-                    placeholder={
-                        isTestFinished ? 'Test Finished!' : 'Start typing...'
-                    }
+                    placeholder={isTestFinished ? 'Test Finished!' : 'Start typing...'}
                     className="input-box"
                 />
 
@@ -245,11 +240,7 @@ function App() {
                 </button>
             </div>
             <footer>
-                <a
-                    href="https://github.com/Tyrowin"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a href="https://github.com/Tyrowin" target="_blank" rel="noopener noreferrer">
                     GitHub
                 </a>
             </footer>

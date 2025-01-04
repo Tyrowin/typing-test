@@ -1,162 +1,162 @@
 body {
-    margin: 0;
-    font-family: 'Geist Mono', monospace;
-    background-color: #cccccc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  font-family: 'Geist Mono', monospace;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App {
-    text-align: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #000;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #000;
 }
 
 .duration-selector {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 
 .duration-selector button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #75a0ce;
-    color: white;
-    transition: background-color 0.2s ease;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #75a0ce;
+  color: white;
+  transition: background-color 0.2s ease;
 }
 
 .duration-selector button:hover {
-    background-color: #4373a3;
+  background-color: #4373a3;
 }
 
 .test-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .word-list-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    overflow-y: hidden;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 400px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  overflow-y: hidden;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
 }
 
 .word-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    line-height: 1.5;
-    text-align: center;
-    color: #000;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  line-height: 1.5;
+  text-align: center;
+  color: #000;
+  justify-content: center;
 }
 
 .word-list span {
-    font-size: 18px;
-    line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .word-list .completed.error {
-    color: red;
+  color: red;
 }
 
 .word-list .correct {
-    color: green;
+  color: green;
 }
 
 .word-list .current {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .input-box {
-    width: 100%;
-    max-width: 400px;
-    height: 50px;
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #cccccc;
-    background-color: #fff;
-    color: #000;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    resize: none;
-    font-family: 'Geist Mono', monospace;
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  background-color: #fff;
+  color: #000;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  resize: none;
+  font-family: 'Geist Mono', monospace;
 }
 
 .results {
-    margin-top: 20px;
-    color: #6d6d6d;
-    -ms-flex-align: center;
+  margin-top: 20px;
+  color: #6d6d6d;
+  -ms-flex-align: center;
 }
 
 .restart-button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #78b686;
-    color: white;
-    transition: background-color 0.2s ease;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #78b686;
+  color: white;
+  transition: background-color 0.2s ease;
 }
 
 .restart-button:hover {
-    background-color: #4c7e56;
+  background-color: #4c7e56;
 }
 
 .timer {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .current.error {
-    color: red;
+  color: red;
 }
 
 footer {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 footer a {
-    color: #6d6d6d;
-    text-decoration: none;
-    font-size: 1rem;
+  color: #6d6d6d;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
 footer a:hover {
-    text-decoration: underline;
-    color: #585858;
+  text-decoration: underline;
+  color: #585858;
 }
