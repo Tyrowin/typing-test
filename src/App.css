@@ -14,8 +14,8 @@ body {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 600px;
+  width: 100%;
+  max-width: 800px;
 }
 
 h1 {
@@ -44,7 +44,7 @@ h1 {
 }
 
 .duration-selector button:hover {
-  background-color: #4373a3;
+  background-color: #5689bd;
 }
 
 .test-container {
@@ -60,11 +60,11 @@ h1 {
   align-items: center;
   height: 100px;
   overflow-y: hidden;
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   padding: 10px;
   margin-bottom: 20px;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   background-color: #f9f9f9;
   border-radius: 5px;
   transition: transform 0.3s ease;
@@ -86,11 +86,11 @@ h1 {
 }
 
 .word-list .completed.error {
-  color: red;
+  color: #ffbd41;
 }
 
 .word-list .correct {
-  color: green;
+  color: #78b686;
 }
 
 .word-list .current {
@@ -99,8 +99,8 @@ h1 {
 
 .input-box {
   width: 100%;
-  max-width: 400px;
-  height: 50px;
+  max-width: 250px;
+  height: 25px;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #cccccc;
@@ -130,7 +130,7 @@ h1 {
 }
 
 .restart-button:hover {
-  background-color: #4c7e56;
+  background-color: #5b9967;
 }
 
 .timer {
@@ -138,11 +138,11 @@ h1 {
 }
 
 .error {
-  color: red;
+  color: #e24c4c;
 }
 
 .current.error {
-  color: red;
+  color: #e24c4c;
 }
 
 footer {
