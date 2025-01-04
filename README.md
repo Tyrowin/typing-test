@@ -31,7 +31,7 @@ git clone https://github.com/Tyrowin/typing-test
 2. Navigate to the project directory
 
 ```bash
-cd typing-speed-test
+cd typing-test
 ```
 
 3. Install dependencies
