@@ -69,7 +69,10 @@ function App() {
 
     setTotalCharactersTyped((prev) => prev + 1);
 
-    if (input[input.length - 1] && input[input.length - 1] === targetWord[input.length - 1]) {
+    if (
+      input[input.length - 1] &&
+      input[input.length - 1] === targetWord[input.length - 1]
+    ) {
       setCorrectCharacters((prev) => prev + 1);
     } else if (input[input.length - 1]) {
       setErrors((prevErrors) => prevErrors + 1);
@@ -121,7 +124,10 @@ function App() {
 
   const scrollToNextRow = () => {
     // Only scroll if we're past threshold row
-    if (wordBoxRef.current && Math.floor(currentWordIndex / ROW_SIZE) >= SCROLL_THRESHOLD_ROW) {
+    if (
+      wordBoxRef.current &&
+      Math.floor(currentWordIndex / ROW_SIZE) >= SCROLL_THRESHOLD_ROW
+    ) {
       const rowHeight = wordBoxRef.current.offsetHeight / 3; // Show 3 rows at once
       wordBoxRef.current.scrollTop += rowHeight;
     }
@@ -134,7 +140,8 @@ function App() {
     setWpm(Math.round(wordsTyped / timeInMinutes));
 
     // Calculate accuracy
-    const accuracyPercentage = Math.round((correctCharacters / totalCharactersTyped) * 100) || 0;
+    const accuracyPercentage =
+      Math.round((correctCharacters / totalCharactersTyped) * 100) || 0;
     setAccuracy(accuracyPercentage);
   };
 
@@ -184,7 +191,8 @@ function App() {
 
   const getWordClass = (index) => {
     // Get the class for the word based on its index
-    const visibleStartIndex = Math.floor(currentWordIndex / ROW_SIZE) * ROW_SIZE;
+    const visibleStartIndex =
+      Math.floor(currentWordIndex / ROW_SIZE) * ROW_SIZE;
     const actualIndex = index + visibleStartIndex;
 
     if (actualIndex < currentWordIndex) {
@@ -245,7 +253,11 @@ function App() {
         </button>
       </div>
       <footer>
-        <a href="https://github.com/Tyrowin" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/Tyrowin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           GitHub
         </a>
       </footer>
